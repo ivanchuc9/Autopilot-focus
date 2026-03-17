@@ -1,209 +1,213 @@
-# ✈️ Autopilot - Productividad en Vuelo
+# ✈️ Autopilot - Productivity in Flight
+(is my first repo, so expect bugs)
+**Transform your deep work sessions into mental journeys**
 
-**Transforma tus sesiones de trabajo profundo en viajes mentales**
-
-Autopilot es una aplicación de escritorio de productividad que utiliza vuelos reales en tiempo real como metáfora para mantener la concentración sostenida. Inspirada en Material Design 3 y optimizada para el hiperfoco.
+Autopilot is a desktop productivity application that uses real-time flights as a metaphor to maintain sustained concentration. Inspired by Material Design 3 and optimized for hyperfocus.
 
 ![Autopilot](https://img.shields.io/badge/Version-1.0.0-blue) ![License](https://img.shields.io/badge/License-MIT-green)
 
-## 🎯 Características Principales
+## 🎯 Key Features
 
-### ⏳ Selección por Duración (Nuevo)
-- **Flujo "Tiempo Primero"**: Tú defines cuánto quieres trabajar, el sistema encuentra el vuelo perfecto.
-- **Filtros Rápidos**: 30m, 1h, 1.5h, 2h, etc.
-- **Duración Personalizada**: Ajuste manual de horas y minutos exactos.
-- **Algoritmo de Coincidencia**: Busca vuelos reales cuya duración estimada coincida con tu sesión evitando aterrizajes prematuros.
+### ⏳ Duration-First Selection (New)
+- **Time-First Flow**: You define how long you want to work, the system finds the perfect flight.
+- **Quick Filters**: 30m, 1h, 1.5h, 2h, etc.
+- **Custom Duration**: Manual adjustment of exact hours and minutes.
+- **Matching Algorithm**: Searches for real flights whose estimated duration matches your session, avoiding premature landings.
 
-### 🎬 Animación Pre-calculada & Sincronizada
-- **Movimiento Fluido**: El avión avanza suavemente calculando la trayectoria completa desde el inicio.
-- **Sincronización Inteligente**: Verificación puntual con la API cada 5 minutos para corregir desviaciones sutiles sin saltos bruscos.
-- **Proyección de Ruta**: Visualización de la trayectoria completa estimada.
+### 🎬 Pre-calculated & Synchronized Animation
+- **Fluid Movement**: The plane advances smoothly by calculating the complete trajectory from the start.
+- **Smart Synchronization**: Periodic verification with the API every 5 minutes to correct subtle deviations without abrupt jumps.
+- **Route Projection**: Visualization of the complete estimated trajectory.
 
-### 🌑 Estética "Efecto Túnel"
-- **Paleta Crepuscular**: Tonos desaturados, grises profundos y azules apagados.
-- **Baja Estimulación**: Interfaz diseñada para "desaparecer" periféricamente.
-- **Mapa Oscuro**: Capa de mapa personalizada de alto contraste pero bajo brillo.
+### 🌑 "Tunnel Effect" Aesthetics
+- **Twilight Palette**: Desaturated tones, deep grays, and muted blues.
+- **Low Stimulation**: Interface designed to "disappear" peripherally.
+- **Dark Map**: Custom high-contrast but low-brightness map layer.
 
-### ⏱️ Temporizador Pomodoro Integrado
-- Modos: Trabajo (25m), Descanso Corto (5m), Descanso Largo (15m)
-- Controles de inicio/pausa/reinicio
-- Notificaciones con sonido al completar
+### ⏱️ Integrated Pomodoro Timer
+- Modes: Work (25m), Short Break (5m), Long Break (15m)
+- Start/pause/reset controls
+- Sound notifications on completion
 
-## 🚀 Instalación y Uso
+## 🚀 Installation and Usage
 
-### Opción 1: Uso Directo (Recomendado)
+### Option 1: Direct Use (Recommended)
 
-1. **Abre el archivo `index.html` directamente en tu navegador**:
-   ```bash
-   # Desde el explorador de Windows
-   Doble clic en LANZAR_Autopilot.bat
-   ```
+1. **Open the `index.html` file directly in your browser**:
+```bash
+   # From Windows Explorer
+   Double-click LANZAR_Autopilot.bat
+```
 
-2. **¡Listo!** La aplicación cargará inmediatamente.
+2. **Ready!** The application will load immediately.
 
-## 📖 Guía de Uso
+## 📖 User Guide
 
-### 1️⃣ **Define tu Sesión**
+### 1️⃣ **Define Your Session**
 
-- Al iniciar, **selecciona la duración** de tu sesión de trabajo (ej. 1 hora).
-- Opcionalmente ingresa un tiempo personalizado.
-- El sistema buscará vuelos activos que encajen con ese tiempo.
+- On startup, **select the duration** of your work session (e.g., 1 hour).
+- Optionally enter a custom time.
+- The system will search for active flights that match that time.
 
-### 2️⃣ **Selecciona tu "Vehículo"**
+### 2️⃣ **Select Your "Vehicle"**
 
-- Verás una lista priorizada de vuelos reales.
-- Se indica la calidad de la compaginación ("Coincidencia perfecta").
-- Haz clic en un vuelo para iniciar.
+- You'll see a prioritized list of real flights.
+- Match quality is indicated ("Perfect match").
+- Click on a flight to begin.
 
-### 3️⃣ **Modo Enfoque (Tracking)**
+### 3️⃣ **Focus Mode (Tracking)**
 
-- El mapa muestra el progreso del vuelo sincronizado con tu tiempo.
-- Activa el **Pomodoro** si deseas dividir la sesión en bloques.
-- **Efecto Túnel**: La interfaz oscura minimiza el cansancio visual y las distracciones.
+- The map shows flight progress synchronized with your time.
+- Activate **Pomodoro** if you want to divide the session into blocks.
+- **Tunnel Effect**: The dark interface minimizes visual fatigue and distractions.
 
-**Tips de Concentración:**
-- La animación es tu reloj visual: cuando el avión aterrice, tu sesión termina.
-- Si el vuelo real se desvía o cambia velocidad, el sistema ajustará suavemente la animación.
+**Concentration Tips:**
+- The animation is your visual clock: when the plane lands, your session ends.
+- If the real flight deviates or changes speed, the system will smoothly adjust the animation.
 
-### 3️⃣ **Vista de Estadísticas**
+### 3️⃣ **Statistics View**
 
-- Revisa tu progreso acumulado
-- Desbloquea logros:
-  - 🛫 **Primer Vuelo**: Rastrea tu primer vuelo
-  - 🌍 **Viajero Mundial**: Rastrea 10 vuelos
-  - ⭐ **Concentración Zen**: Completa 5 sesiones Pomodoro
-  - 💎 **Maestro del Flow**: Mantén una racha de 7 días
+- Review your accumulated progress
+- Unlock achievements:
+  - 🛫 **First Flight**: Track your first flight
+  - 🌍 **World Traveler**: Track 10 flights
+  - ⭐ **Zen Concentration**: Complete 5 Pomodoro sessions
+  - 💎 **Flow Master**: Maintain a 7-day streak
 
-## 🎨 Personalización
+## 🎨 Customization
 
-### Colores
-Edita `styles.css` en la sección `:root` para cambiar la paleta:
-
+### Colors
+Edit `styles.css` in the `:root` section to change the palette:
 ```css
 :root {
-    --primary-600: #56809cff;    /* Color primario */
-    --secondary-500: #42b8dbff;  /* Color secundario */
-    --accent-500: #216769ff;     /* Color de acento */
+    --primary-600: #56809cff;    /* Primary color */
+    --secondary-500: #42b8dbff;  /* Secondary color */
+    --accent-500: #216769ff;     /* Accent color */
 }
 ```
 
-### Región de Vuelos
-Modifica el área de búsqueda en `app.js` línea ~105:
-
+### Flight Region
+Modify the search area in `app.js` line ~105:
 ```javascript
-// Cambiar coordenadas del bounding box
+// Change bounding box coordinates
 const response = await fetch(
     'https://opensky-network.org/api/states/all?lamin=35&lomin=-10&lamax=60&lomax=30'
-    // lamin: latitud mínima
-    // lomin: longitud mínima
-    // lamax: latitud máxima
-    // lomax: longitud máxima
+    // lamin: minimum latitude
+    // lomin: minimum longitude
+    // lamax: maximum latitude
+    // lomax: maximum longitude
 );
 ```
 
-### Tiempos Pomodoro
-Ajusta en `app.js` línea ~532:
-
+### Pomodoro Times
+Adjust in `app.js` line ~532:
 ```javascript
 const modes = {
-    'work': 25 * 60,    // 25 minutos
-    'short': 5 * 60,    // 5 minutos
-    'long': 15 * 60     // 15 minutos
+    'work': 25 * 60,    // 25 minutes
+    'short': 5 * 60,    // 5 minutes
+    'long': 15 * 60     // 15 minutes
 };
 ```
 
-## 🛠️ Tecnologías Utilizadas
+## 🛠️ Technologies Used
 
-- **HTML5**: Estructura semántica
-- **CSS3**: Diseño moderno con variables CSS, Grid, Flexbox
-- **JavaScript (Vanilla)**: Lógica de aplicación sin frameworks
-- **Leaflet.js**: Mapas interactivos
-- **OpenSky Network API**: Datos de vuelos en tiempo real
-- **Web Audio API**: Notificaciones sonoras
-- **LocalStorage**: Persistencia de estadísticas
+- **HTML5**: Semantic structure
+- **CSS3**: Modern design with CSS variables, Grid, Flexbox
+- **JavaScript (Vanilla)**: Application logic without frameworks
+- **Leaflet.js**: Interactive maps
+- **OpenSky Network API**: Real-time flight data
+- **Web Audio API**: Sound notifications
+- **LocalStorage**: Statistics persistence
 
-## 🌐 API de Vuelos - OpenSky Network
+## 🌐 Flight API - OpenSky Network
 
-**Características:**
-- ✅ Gratuita
-- ✅ Sin necesidad de API key
-- ✅ Datos en tiempo real
-- ✅ Cobertura global
-- ⚠️ Límite: 10 segundos entre requests
+**Features:**
+- ✅ Free
+- ✅ No API key required
+- ✅ Real-time data
+- ✅ Global coverage
+- ⚠️ Limit: 10 seconds between requests
 
-**Documentación**: https://opensky-network.org/apidoc/
+**Documentation**: https://opensky-network.org/apidoc/
 
-## 📊 Estructura del Proyecto
-
+## 📊 Project Structure
 ```
 Autopilot-productive/
-├── index.html          # Estructura de la aplicación
-├── styles.css          # Sistema de diseño completo
-├── app.js             # Lógica de aplicación
-└── README.md          # Esta documentación
+├── index.html          # Application structure
+├── styles.css          # Complete design system
+├── app.js             # Application logic
+└── README.md          # This documentation
 ```
 
-## 🎯 Roadmap Futuro
+## 🎯 Future Roadmap
 
-### Mejoras Planificadas:
-- [ ] **Electron packaging**: App nativa de escritorio
-- [ ] **Múltiples regiones**: Selector de área geográfica
-- [ ] **Rutas comerciales**: Información de aeropuertos origen/destino
-- [ ] **Modo offline**: Cache de vuelos recientes
-- [ ] **Temas adicionales**: Claro/Oscuro/Automático
-- [ ] **Integración con Spotify**: Música de fondo para concentración
-- [ ] **Export de estadísticas**: CSV/JSON
-- [ ] **Widget de escritorio**: Siempre visible
+### Planned Improvements:
+- [ ] **Electron packaging**: Native desktop app
+- [ ] **Multiple regions**: Geographic area selector
+- [ ] **Commercial routes**: Origin/destination airport information
+- [ ] **Offline mode**: Cache of recent flights
+- [ ] **Additional themes**: Light/Dark/Automatic
+- [ ] **Spotify integration**: Background music for concentration
+- [ ] **Statistics export**: CSV/JSON
+- [ ] **Desktop widget**: Always visible
 
-### Gamificación Avanzada:
-- [ ] **Sistema de niveles**: XP por sesiones completadas
-- [ ] **Colección de aerolíneas**: Rastrea diferentes compañías
-- [ ] **Mapa de cobertura**: Visualiza todas las rutas seguidas
-- [ ] **Desafíos semanales**: Metas personalizadas
+### Advanced Gamification:
+- [ ] **Level system**: XP for completed sessions
+- [ ] **Airline collection**: Track different companies
+- [ ] **Coverage map**: Visualize all tracked routes
+- [ ] **Weekly challenges**: Personalized goals
 
-## 💡 Consejos de Productividad
+## 💡 Productivity Tips
 
-### Técnica del "Vuelo Mental"
-1. **Pre-vuelo**: Planifica tu sesión (5 min)
-2. **Despegue**: Comienza con tareas simples (10 min)
-3. **Crucero**: Concentración profunda en la tarea principal (25-50 min)
-4. **Aterrizaje**: Revisión y cierre (5 min)
+### "Mental Flight" Technique
+1. **Pre-flight**: Plan your session (5 min)
+2. **Takeoff**: Start with simple tasks (10 min)
+3. **Cruise**: Deep concentration on main task (25-50 min)
+4. **Landing**: Review and close (5 min)
 
-### Combinación con Pomodoro
-- **1 Pomodoro = Despegue**
-- **2-3 Pomodoros = Crucero**
-- **4 Pomodoros = Aterrizaje completo**
+### Combination with Pomodoro
+- **1 Pomodoro = Takeoff**
+- **2-3 Pomodoros = Cruise**
+- **4 Pomodoros = Complete Landing**
 
-### Metáfora del Piloto
-> "No puedes pausar un vuelo en el aire. Del mismo modo, mantén tu concentración sin interrupciones durante las sesiones de trabajo."
+### Pilot Metaphor
+> "You can't pause a flight mid-air. Similarly, maintain your concentration without interruptions during work sessions."
 
-## 🔒 Privacidad
+## 🔒 Privacy
 
-- ✅ **Sin tracking**: No recopilamos datos personales
-- ✅ **Local-first**: Estadísticas guardadas en tu navegador
-- ✅ **Sin cuenta requerida**: Funciona completamente offline (excepto datos de vuelos)
-- ✅ **Open source**: Código completamente auditable
+- ✅ **No tracking**: We don't collect personal data
+- ✅ **Local-first**: Statistics saved in your browser
+- ✅ **No account required**: Works completely offline (except flight data)
+- ✅ **Open source**: Fully auditable code
 
-## 🐛 Solución de Problemas
+## 🐛 Troubleshooting
 
-### Los vuelos no cargan
-- **Causa**: Límite de rate de OpenSky API
-- **Solución**: Espera 10 segundos e intenta refrescar
+### Flights won't load
+- **Cause**: OpenSky API rate limit
+- **Solution**: Wait 10 seconds and try refreshing
 
-### El mapa no se muestra
-- **Causa**: Conexión a CDN de Leaflet
-- **Solución**: Verifica tu conexión a internet
+### Map doesn't display
+- **Cause**: Leaflet CDN connection
+- **Solution**: Check your internet connection
 
-### Las notificaciones no funcionan
-- **Causa**: Permisos de navegador
-- **Solución**: Acepta los permisos cuando la app los solicite
+### Notifications don't work
+- **Cause**: Browser permissions
+- **Solution**: Accept permissions when the app requests them
 
-## 📄 Licencia
+## 📄 License
 
-MIT License - Libre para uso personal y comercial
+MIT License - Free for personal and commercial use
+
+## 👨‍💻 Credits
+
+**Developed with:**
+- Material Design 3 guidelines
+- Inspiration: Original Autopilot
+- Data: OpenSky Network
+- Maps: Leaflet.js + CartoDB Dark
 
 ---
 
-**¡Buen vuelo y excelente concentración! ✈️🎯**
+**Safe flight and excellent concentration! ✈️🎯**
 
-¿Preguntas o sugerencias? Abre un issue en el repositorio.
+Questions or suggestions? Open an issue in the repository.
