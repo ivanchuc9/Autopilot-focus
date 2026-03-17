@@ -1,5 +1,6 @@
 # ✈️ Autopilot - Productivity in Flight
 (is my first repo, so expect bugs)
+
 **Transform your deep work sessions into mental journeys**
 
 Autopilot is a desktop productivity application that uses real-time flights as a metaphor to maintain sustained concentration. Inspired by Material Design 3 and optimized for hyperfocus.
