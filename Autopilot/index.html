@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autopilot</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- Fonts: Roboto (Material standard) & Material Symbols Rounded -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="ambient-background"></div>
+
+    <main class="app-frame">
+
+        <!-- WELCOME SCREEN overlay (Step 0) -->
+        <div class="welcome-overlay" id="welcomeOverlay">
+            <div class="welcome-content">
+                <div class="welcome-glass-card">
+                    <div class="welcome-header">
+                        <div class="logo-container">
+                            <span class="material-symbols-rounded welcome-logo">flight_takeoff</span>
+                            <div class="logo-glow"></div>
+                        </div>
+                        <h1 class="welcome-title">Autopilot</h1>
+                        <div class="welcome-divider"></div>
+                    </div>
+
+                    <div class="welcome-body">
+                        <p class="welcome-description">
+                            Sincroniza tu enfoque con el ritmo real del cielo.<br>
+                            <span class="subtitle">Aqui contamos con todo el mundo. Todo. El. Mundo.</span>
+                        </p>
+                    </div>
+
+                    <div class="welcome-footer">
+                        <button class="welcome-btn-primary" id="btnStartApp">
+                            <span class="btn-text">Iniciar Operaciones</span>
+                            <span class="material-symbols-rounded btn-icon">arrow_forward</span>
+                        </button>
+                        <p class="welcome-version">v3.0 Platinum Edition</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="welcome-background-decoration">
+                <div class="circle circle-1"></div>
+                <div class="circle circle-2"></div>
+            </div>
+        </div>
+
+        <!-- HEADER (Started hidden) -->
+        <header class="app-header" id="appHeader" style="opacity: 0; pointer-events: none;">
+            <div class="brand">
+                <span class="material-symbols-rounded brand-icon">flight_takeoff</span>
+                <span class="brand-name">Autopilot</span>
+            </div>
+            <!-- Progress Steps (Subtle) -->
+            <div class="steps-indicator">
+                <div class="step-dot active" data-step="1"></div>
+                <div class="step-dot" data-step="2"></div>
+                <div class="step-dot" data-step="3"></div>
+                <div class="step-dot" data-step="4"></div>
+            </div>
+        </header>
+
+        <!-- SCREENS CONTAINER -->
+        <div class="screens-wrapper">
+
+            <!-- SCREEN 1: METHOD SELECTION -->
+            <section class="screen active" id="screen-method">
+                <div class="center-content-top">
+                    <h1 class="hero-title-sm">Elige tu estrategia</h1>
+                    <p class="hero-subtitle">Optimiza tu flujo mental con el método adecuado</p>
+
+                    <div class="methods-grid">
+                        <!-- Neurodivergent / Deep Work -->
+                        <div class="method-card premium" data-method="hyperfocus">
+                            <div class="method-icon">
+                                <span class="material-symbols-rounded">psychology</span>
+                            </div>
+                            <div class="method-info">
+                                <h3>Hiperfoco</h3>
+                                <p>Sesiones largas sin interrupciones. Ideal para TDAH y Deep Work.</p>
+                                <span class="tag">90 - 180 min</span>
+                            </div>
+                        </div>
+
+                        <!-- Classic -->
+                        <div class="method-card" data-method="pomodoro">
+                            <div class="method-icon">
+                                <span class="material-symbols-rounded">timer</span>
+                            </div>
+                            <div class="method-info">
+                                <h3>Pomodoro</h3>
+                                <p>El clásico. Ciclos cortos con descansos frecuentes para mantener frescura.</p>
+                                <span class="tag">25 min + 5 min</span>
+                            </div>
+                        </div>
+
+                        <!-- Biological Rhythms -->
+                        <div class="method-card" data-method="ultradian">
+                            <div class="method-icon">
+                                <span class="material-symbols-rounded">water_drop</span>
+                            </div>
+                            <div class="method-info">
+                                <h3>Ciclo Ultradiano</h3>
+                                <p>Alineado con tus ritmos biológicos naturales de energía.</p>
+                                <span class="tag">90 min + 20 min</span>
+                            </div>
+                        </div>
+
+                        <!-- Efficiency Study -->
+                        <div class="method-card" data-method="5217">
+                            <div class="method-icon">
+                                <span class="material-symbols-rounded">trending_up</span>
+                            </div>
+                            <div class="method-info">
+                                <h3>52 / 17</h3>
+                                <p>Ratio optimizado de productividad según estudios de DeskTime.</p>
+                                <span class="tag">52 min + 17 min</span>
+                            </div>
+                        </div>
+
+                        <!-- Flexible -->
+                        <div class="method-card" data-method="flowtime">
+                            <div class="method-icon">
+                                <span class="material-symbols-rounded">waves</span>
+                            </div>
+                            <div class="method-info">
+                                <h3>Flowtime</h3>
+                                <p>Sin alarmas. Trabaja hasta que necesites descansar naturalmente.</p>
+                                <span class="tag">Flexible</span>
+                            </div>
+                        </div>
+
+                        <!-- Simple -->
+                        <div class="method-card" data-method="timeblocking">
+                            <div class="method-icon">
+                                <span class="material-symbols-rounded">view_agenda</span>
+                            </div>
+                            <div class="method-info">
+                                <h3>Time Blocking</h3>
+                                <p>Bloques fijos para tareas específicas.</p>
+                                <span class="tag">Personalizable</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SCREEN 2: DURATION SELECTION -->
+            <section class="screen" id="screen-duration">
+                <div class="screen-header-simple">
+                    <button class="icon-btn-ghost" id="btnBackToMethod">
+                        <span class="material-symbols-rounded">arrow_back</span>
+                    </button>
+                </div>
+                <div class="center-content">
+                    <h1 class="hero-title" id="durationTitle">Configura tu sesión</h1>
+                    <p class="hero-subtitle">Define la duración de tu sesión de enfoque</p>
+
+                    <div class="duration-input-wrapper">
+                        <div class="time-display-large">
+                            <input type="number" id="inputHours" class="time-input" placeholder="0" min="0" max="12"
+                                value="1">
+                            <span class="time-separator">h</span>
+                            <input type="number" id="inputMinutes" class="time-input" placeholder="00" min="0" max="59"
+                                value="00">
+                            <span class="time-label">min</span>
+                        </div>
+                    </div>
+
+                    <div class="quick-chips">
+                        <button class="chip" data-time="30">30 min</button>
+                        <button class="chip active" data-time="60">1 hora</button>
+                        <button class="chip" data-time="90">1.5 horas</button>
+                        <button class="chip" data-time="120">2 horas</button>
+                    </div>
+
+                    <button class="fab-primary" id="btnToStep2">
+                        <span class="label">Buscar Vuelos</span>
+                        <span class="material-symbols-rounded">arrow_forward</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- SCREEN 2: FLIGHT SELECTION -->
+            <section class="screen" id="screen-selection">
+                <div class="screen-header">
+                    <button class="icon-btn" id="btnBackToDuration">
+                        <span class="material-symbols-rounded">arrow_back</span>
+                    </button>
+                    <div class="header-text">
+                        <h2>Elige tu ruta</h2>
+                        <p id="selectionSubtitle">Vuelos para una sesión de 1h 0m</p>
+                    </div>
+                    <button class="icon-btn" id="btnRefreshFlights">
+                        <span class="material-symbols-rounded">refresh</span>
+                    </button>
+                </div>
+
+                <div class="cards-scroll-container" id="flightsGrid">
+                    <!-- Loading State -->
+                    <div class="loader-container">
+                        <div class="spinner"></div>
+                        <p>Escaneando el cielo...</p>
+                    </div>
+
+                    <!-- Flight cards will be injected here -->
+                </div>
+            </section>
+
+            <!-- SCREEN 3: IMMERSIVE TRACKING -->
+            <section class="screen" id="screen-tracking">
+                <!-- Map Layer -->
+                <div id="map"></div>
+
+                <!-- Floating Island: Header Info -->
+                <div class="floating-island top-left">
+                    <div class="flight-badge">
+                        <span class="material-symbols-rounded">flight</span>
+                        <span id="trackCallsign">BA249</span>
+                    </div>
+                    <div class="flight-route-mini">
+                        <span id="trackOrigin">LHR → JFK</span>
+                    </div>
+                </div>
+
+                <!-- Floating Island: Timer & Pomodoro -->
+                <div class="floating-island bottom-center glass-panel">
+                    <div class="timer-display-main" id="mainTimer">25:00</div>
+
+                    <div class="timer-controls">
+                        <button class="control-btn" id="btnPomodoroToggle">
+                            <span class="material-symbols-rounded" id="iconPomudoToggle">play_arrow</span>
+                        </button>
+                        <button class="control-btn-secondary" id="btnPomodoroReset">
+                            <span class="material-symbols-rounded">replay</span>
+                        </button>
+                    </div>
+
+                    <div class="mode-selector">
+                        <button class="mode-pill active" data-mode="work">Focus</button>
+                        <button class="mode-pill" data-mode="short">Short</button>
+                        <button class="mode-pill" data-mode="long">Long</button>
+                    </div>
+                </div>
+
+                <!-- Floating Island: Stats/Progress -->
+                <div class="floating-island top-right">
+                    <div class="stat-mini">
+                        <span class="material-symbols-rounded">schedule</span>
+                        <span id="trackRemaining">2h 15m</span>
+                    </div>
+                    <button class="icon-btn-glass" id="btnExitTracking" title="Terminar sesión">
+                        <span class="material-symbols-rounded">close</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- SCREEN 5: LANDING CELEBRATION -->
+            <section class="screen" id="screen-landed">
+                <div class="landed-bg">
+                    <div class="landed-glow"></div>
+                    <div class="landed-circles">
+                        <div class="land-circle lc1"></div>
+                        <div class="land-circle lc2"></div>
+                        <div class="land-circle lc3"></div>
+                    </div>
+                </div>
+
+                <div class="landed-content">
+                    <div class="landed-icon-wrap">
+                        <span class="material-symbols-rounded landed-icon">flight_land</span>
+                    </div>
+                    <h1 class="landed-title">¡Hemos aterrizado!</h1>
+                    <p class="landed-subtitle">El vuelo ha llegado a su destino</p>
+
+                    <div class="landed-route-card">
+                        <div class="landed-flight-tag">
+                            <span class="material-symbols-rounded" style="font-size:1rem;">flight</span>
+                            <span id="landedCallsign">BA249</span>
+                        </div>
+                        <div class="landed-dest">
+                            <div class="landed-dest-code" id="landedDestCode">JFK</div>
+                            <div class="landed-dest-name" id="landedDestName">New York JFK</div>
+                        </div>
+                        <p class="landed-congrats">Tu sesión de enfoque ha concluido con éxito.<br>El avión ha
+                            aterrizado. Bien hecho.</p>
+                    </div>
+
+                    <button class="fab-primary" id="btnNewSession" style="margin-top: 2rem;">
+                        <span class="label">Nueva Sesión</span>
+                        <span class="material-symbols-rounded">refresh</span>
+                    </button>
+                </div>
+
+                <!-- Discrete corner button -->
+                <a class="landed-corner-link" href="https://youtu.be/JWT_wzIG4gY?si=MpWnc880U6Ko6Xgz" target="_blank"
+                    rel="noopener" title="Música de aterrizaje">
+                    <span class="material-symbols-rounded">music_note</span>
+                </a>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Audio & Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
